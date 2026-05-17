@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation</title>
+</head>
+<body>
+
+<form onsubmit="return validateForm()">
+  Name: <input type="text" id="name"><br><br>
+  Email: <input type="text" id="email"><br><br>
+  <button type="submit">Submit</button>
+</form>
+
+<p id="error" style="color:red;"></p>
+
+<script>
+function validateForm() {
+  let name = document.getElementById("name").value.trim();
+  let email = document.getElementById("email").value.trim();
+  let error = document.getElementById("error");
+
+  error.innerHTML = "";
+
+  // Check empty fields
+  if (name === "" || email === "") {
+    error.innerHTML = "All fields are required!";
+    return false;
+  }
+
+  // Simple email validation
+  let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+  if (!email.match(emailPattern)) {
+    error.innerHTML = "Enter a valid email address!";
+    return false;
+  }
+
+  // If all valid
+  alert("Form submitted successfully!");
+  return true;
+}
+</script>
+
+</body>
+</html>
