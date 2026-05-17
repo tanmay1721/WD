@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic DOM Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    #itemList li {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="mainHeading">Welcome!</h1>
+
+  <!-- Time Display -->
+  <h2>Current Time:</h2>
+  <p id="timeDisplay"></p>
+
+  <!-- Change Text -->
+  <button onclick="changeText()">Change Heading</button>
+
+  <!-- Add Items -->
+  <h2>Add Items</h2>
+  <input type="text" id="itemInput" placeholder="Enter item">
+  <button onclick="addItem()">Add Item</button>
+
+  <ul id="itemList"></ul>
+
+  <script>
+    // Update time every second
+    function updateTime() {
+      const now = new Date();
+      document.getElementById("timeDisplay").textContent = now.toLocaleTimeString();
+    }
+    setInterval(updateTime, 1000);
+    updateTime();
+
+    // Change heading text
+    function changeText() {
+      const heading = document.getElementById("mainHeading");
+      heading.textContent = "You clicked the button!";
+      heading.style.color = "blue";
+    }
+
+    // Add item to list
+    function addItem() {
+      const input = document.getElementById("itemInput");
+      const value = input.value.trim();
+
+      if (value === "") {
+        alert("Please enter something!");
+        return;
+      }
+
+      const li = document.createElement("li");
+      li.textContent = value;
+
+      // Remove item on click
+      li.addEventListener("click", function() {
+        li.remove();
+      });
+
+      document.getElementById("itemList").appendChild(li);
+      input.value = "";
+    }
+  </script>
+
+</body>
+</html>
