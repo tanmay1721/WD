@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Personal Details</title>
+</head>
+<body>
+<h1>Personal Details</h1>
+<p>
+<strong>Name:</strong> <u>John Doe</u>
+</p>
+<p>
+<strong>Address:</strong>
+<br>
+123 Main Street
+<br>
+Anytown, ST 12345
+</p>
+<p>
+<strong>Occupation:</strong> <em>Software Developer</em>
+</p>
+
+<p>
+<strong>Hobbies:</strong>
+<ul>
+<li>Reading</li>
+<li>Hiking</li>
+<li>Coding</li>
+</ul>
+</p>
+<p>
+<strong>Contact:</strong>
+<br>
+<abbr title="Phone Number">P:</abbr> 555-1234
+<br>
+<abbr title="Email Address">E:</abbr> <a
+href="mailto:john.doe@example.com">john.doe@example.com</a>
+</p>
+</body>
+</html>
