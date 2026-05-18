@@ -1,0 +1,7 @@
+<?php
+$fruits = array("Apple", "Banana", "Mango", "Orange");
+echo "<b>Fruits List:</b><br>";
+for ($i = 0; $i < count($fruits); $i++) {
+   echo $fruits[$i] . "<br>";
+}
+?>
